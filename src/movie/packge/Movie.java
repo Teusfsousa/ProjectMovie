@@ -26,9 +26,14 @@ public class Movie {
         this.releaseYear = releaseYear;
     }
 
+    public void setIncludePlan(boolean includePlan) {
+        this.includePlan = includePlan;
+    }
+
     public void exibeFicha(){
-     System.out.println("O nome do filme é " + name + " é o ano de lançamento é : " + releaseYear);
-     System.out.println("A duração do filme é " + durationInMinutes);
+     System.out.println("The name of the movie is " + name);
+     System.out.println("The year of release is " + releaseYear);
+     System.out.println("duration for this movie is " + durationInMinutes);
  }
    public void avalia(double nota){
      assessment += nota;
