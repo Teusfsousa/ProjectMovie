@@ -1,4 +1,6 @@
+import Filter.RecommendationFilter;
 import calculos.TimeCalculator;
+import movie.packge.Epispdio;
 import movie.packge.Movie;
 import movie.packge.Series;
 
@@ -43,6 +45,15 @@ public class Principal {
         calculator.included(movie);
         calculator.included(ozark);
         System.out.println(calculator.getTotalTime());
+
+        RecommendationFilter filter = new RecommendationFilter();
+        filter.Filter(myMovie);
+
+        Epispdio epispdio = new Epispdio();
+        epispdio.setNumero(1);
+        epispdio.setNome(ozark.getName());
+        epispdio.setTotalViwes(300);
+        filter.Filter(epispdio);
     }
 
 }
