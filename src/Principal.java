@@ -4,6 +4,8 @@ import movie.packge.Epispdio;
 import movie.packge.Movie;
 import movie.packge.Series;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
 
@@ -50,10 +52,23 @@ public class Principal {
         filter.Filter(myMovie);
 
         Epispdio epispdio = new Epispdio();
-        epispdio.setNumero(1);
+        epispdio.setNumero(5);
         epispdio.setNome(ozark.getName());
-        epispdio.setTotalViwes(300);
+        epispdio.setTotalViwes(100);
         filter.Filter(epispdio);
+
+        Movie mymovie = new Movie();
+        mymovie.setName("The doctor");
+        mymovie.setDurationInMinutes(200);
+        mymovie.setReleaseYear(2000);
+        mymovie.setAssessment(10);
+
+        ArrayList<Movie> ListMovie = new ArrayList<>();
+        ListMovie.add(mymovie);
+        ListMovie.add(myMovie);
+        System.out.println("Tamanho da lista " + ListMovie.size());
+        System.out.println("Primary movie " + ListMovie.get(0).getName());
+
     }
 
 }
