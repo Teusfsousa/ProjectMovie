@@ -2,7 +2,7 @@ package movie.packge;
 
 import calculos.Classification;
 
-public class Epispdio implements Classification {
+public class Episodio implements Classification {
     private int numero;
     private String nome;
     private String serie;

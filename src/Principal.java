@@ -1,6 +1,6 @@
 import Filter.RecommendationFilter;
 import calculos.TimeCalculator;
-import movie.packge.Epispdio;
+import movie.packge.Episodio;
 import movie.packge.Movie;
 import movie.packge.Series;
 
@@ -51,7 +51,7 @@ public class Principal {
         RecommendationFilter filter = new RecommendationFilter();
         filter.Filter(myMovie);
 
-        Epispdio epispdio = new Epispdio();
+        Episodio epispdio = new Episodio();
         epispdio.setNumero(5);
         epispdio.setNome(ozark.getName());
         epispdio.setTotalViwes(100);
@@ -66,8 +66,8 @@ public class Principal {
         ArrayList<Movie> ListMovie = new ArrayList<>();
         ListMovie.add(mymovie);
         ListMovie.add(myMovie);
-        System.out.println("Tamanho da lista " + ListMovie.size());
-        System.out.println("Primary movie " + ListMovie.get(0).getName());
+        System.out.println("List size " + ListMovie.size());
+        System.out.println("First movie " + ListMovie.get(0).getName()); //trabalhando com listas de array nesse projeto
 
     }
 
