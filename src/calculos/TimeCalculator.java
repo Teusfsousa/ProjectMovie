@@ -1,7 +1,6 @@
 package calculos;
 
-import movie.packge.Movie;
-import movie.packge.Title;
+import Title.packge.Title;
 
 public class TimeCalculator {
     private int totalTime;

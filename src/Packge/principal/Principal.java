@@ -1,23 +1,19 @@
+package Packge.principal;
+
 import Filter.RecommendationFilter;
 import calculos.TimeCalculator;
-import movie.packge.Episodio;
-import movie.packge.Movie;
-import movie.packge.Series;
+import Episodio.packge.Episodio;
+import Packge.movie.Movie;
+import Serie.packge.series.Series;
 
 import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
 
-        Movie myMovie = new Movie();
-        myMovie.setName("Fast and furious 7"); //nome do filme da classe movie.packge.Movie
+        Movie myMovie = new Movie("Fast an furious", 2017);   //nome do filme da classe Packge.movie.Movie
         myMovie.setDurationInMinutes(180); // duração em minutos do filme
-        myMovie.setIncludePlan(true);
-        myMovie.setReleaseYear(2017); //ano de lançamento
-
-        //myMovie.assessment = 7.7; // avaliação do filme
-        //myMovie.totalAssessment = 10; // total de avaliação do filme
-
+        
         myMovie.datasHeet();
         myMovie.evaluate(5);
         myMovie.evaluate(8);
@@ -27,9 +23,7 @@ public class Principal {
         System.out.println("Total reviews " + myMovie.getTotalAssessment());
         System.out.println(myMovie.returnMedia());
 
-        Series ozark = new Series();
-        ozark.setName("Ozark");
-        ozark.setReleaseYear(2017);
+        Series ozark = new Series("Ozark", 2020);
         ozark.datasHeet();
         ozark.setSeasons(4);
         ozark.setEpisodesPerSeasons(40);
@@ -37,9 +31,7 @@ public class Principal {
         ozark.setDurationInMinutes(50);
         System.out.println("Duration to marathon ozark " + ozark.getDurationInMinutes());
 
-        Movie movie = new Movie();
-        movie.setName("Avatar");
-        movie.setReleaseYear(2023);
+        Movie movie = new Movie("Avatar ",2023);
         movie.setDurationInMinutes(200);
 
         TimeCalculator calculator = new TimeCalculator();
@@ -57,10 +49,8 @@ public class Principal {
         epispdio.setTotalViwes(100);
         filter.Filter(epispdio);
 
-        Movie mymovie = new Movie();
-        mymovie.setName("The doctor");
+        Movie mymovie = new Movie("The doctor", 1991);
         mymovie.setDurationInMinutes(200);
-        mymovie.setReleaseYear(2000);
         mymovie.setAssessment(10);
 
         ArrayList<Movie> ListMovie = new ArrayList<>();
@@ -68,7 +58,8 @@ public class Principal {
         ListMovie.add(myMovie);
         System.out.println("List size " + ListMovie.size());
         System.out.println("First movie " + ListMovie.get(0).getName()); //trabalhando com listas de array nesse projeto
-
+        System.out.println(ListMovie);
+        System.out.println("Of movie toString " + ListMovie.get(0).toString());
     }
 
 }
