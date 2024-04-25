@@ -1,6 +1,6 @@
-package movie.packge;
+package Title.packge;
 
-public class Title {
+public class Title implements Comparable<Title> {
 
     private String name; //nome do filme
     private int releaseYear; //ano de lançamento
@@ -9,6 +9,10 @@ public class Title {
     private int totalAssessment; //total de avaliação do filme
     private int durationInMinutes;  // duração do filme
 
+    public Title (String name, int releaseYear){
+        this.name = name;
+        this.releaseYear = releaseYear;
+    }
     public int getTotalAssessment(){
 
         return totalAssessment;
@@ -70,5 +74,10 @@ public class Title {
         System.out.println("The name of the movie is " + name);
         System.out.println("The year of release is " + releaseYear);
         System.out.println("Duration for this movie is " + durationInMinutes);
+    }
+
+    @Override
+    public int compareTo(Title anotherTitle) {
+        return this.getName().compareTo(anotherTitle.getName());
     }
 }
