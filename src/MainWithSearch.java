@@ -1,5 +1,8 @@
+import Title.packge.MyTitleOmdb;
 import Title.packge.Title;
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.net.URI;
@@ -20,14 +23,18 @@ public class MainWithSearch {
                 .uri(URI.create(andress))
                 .build();
         HttpResponse<String> response = client
-
                 .send(request, HttpResponse.BodyHandlers.ofString());
-
         String json = response.body();
         System.out.println(json);
-        Gson gson = new Gson();
-        Title title = gson.fromJson(json, Title.class);
+
+        Gson gson = new GsonBuilder().setFieldNamingPolicy
+                (FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+        MyTitleOmdb myTitleOmdb = gson.fromJson(json, MyTitleOmdb.class);
+         Title title = new Title(myTitleOmdb);
+        System.out.println("Ttile converted");
         System.out.println(title);
+
+
 
 
     }
