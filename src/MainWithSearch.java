@@ -36,7 +36,7 @@ public class MainWithSearch {
             System.out.println("Ttile converted");
             System.out.println(title);
         }catch (NumberFormatException e){
-            System.out.println("Aconteceu um erro!: ");
+            System.out.println("An error ocurred!: ");
             System.out.println(e.getMessage()); //Está mensagem vai mostrar o erro que deu ao rodar
 
         }
