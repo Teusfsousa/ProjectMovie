@@ -30,12 +30,16 @@ public class MainWithSearch {
         Gson gson = new GsonBuilder().setFieldNamingPolicy
                 (FieldNamingPolicy.UPPER_CAMEL_CASE).create();
         MyTitleOmdb myTitleOmdb = gson.fromJson(json, MyTitleOmdb.class);
-         Title title = new Title(myTitleOmdb);
-        System.out.println("Ttile converted");
-        System.out.println(title);
+        System.out.println(myTitleOmdb);
+        try {
+            Title title = new Title(myTitleOmdb);
+            System.out.println("Ttile converted");
+            System.out.println(title);
+        }catch (NumberFormatException e){
+            System.out.println("Aconteceu um erro!: ");
+            System.out.println(e.getMessage()); //Está mensagem vai mostrar o erro que deu ao rodar
 
-
-
+        }
 
     }
 }
