@@ -1,5 +1,6 @@
 package Title.packge;
 
+import br.com.year.exception.ErrorYearException;
 import com.google.gson.annotations.SerializedName;
 
 public class Title implements Comparable<Title> {
@@ -19,6 +20,9 @@ public class Title implements Comparable<Title> {
 
     public Title(MyTitleOmdb myTitleOmdb) {
         this.name = myTitleOmdb.title();
+        if(myTitleOmdb.year().length() > 4){
+            throw new ErrorYearException("I couldn't change the title because it contains more than 4 characters");
+        }
         this.releaseYear = Integer.valueOf(myTitleOmdb.year());
         this.durationInMinutes = Integer.valueOf(myTitleOmdb.runtime().substring(0,2));
     }
